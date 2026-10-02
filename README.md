@@ -42,3 +42,24 @@
 
 Например: "CRM для отдела продаж: учёт клиентов, сделок и задач менеджеров.
 Сущности: Client, Deal, Task. Пользователи: менеджеры и руководитель."
+
+## REST API
+
+Эндпоинты:
+
+- `GET    /api/employees/` — список сотрудников
+- `POST   /api/employees/` — создать сотрудника
+- `GET    /api/employees/<id>/` — один сотрудник
+- `PATCH  /api/employees/<id>/` — частичное обновление
+- `DELETE /api/employees/<id>/` — удалить
+- `GET    /api/departments/` — список отделов (аналогично CRUD)
+
+Пример запроса:
+
+    curl http://127.0.0.1:8000/api/employees/
+
+Создание сотрудника:
+
+    curl -X POST http://127.0.0.1:8000/api/employees/ \
+      -H "Content-Type: application/json" \
+      -d '{"full_name": "Иванова Анна", "position": "Менеджер", "hired_at": "2026-09-15", "department": 1}'
