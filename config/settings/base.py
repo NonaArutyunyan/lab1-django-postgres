@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     "default": env.db("DATABASE_URL"),
 }
-DATABASES["default"]["CONN_MAX_AGE"] = env.int("DB_CONN_MAX_AGE", default=60)
+DATABASES["default"]["CONN_MAX_AGE"] = env.int("DB_CONN_MAX_AGE", default=0)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
